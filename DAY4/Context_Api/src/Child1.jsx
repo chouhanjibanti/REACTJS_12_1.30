@@ -1,4 +1,4 @@
-// // first way 
+// // first way
 // import React, { useContext } from 'react'
 // import { DataContext } from './App';
 
@@ -13,36 +13,30 @@
 
 // export default Child1
 
-
-// // in first way 
-// // useContext hook :- it wil accept single argument 
-
+// // in first way
+// // useContext hook :- it wil accept single argument
 
 // =========================================
 
-
 // second way to access the data
 
-import React from 'react'
-import { DataContext } from './App'
-
+import React from "react";
+import { DataContext } from "./App";
 
 function Child1() {
   return (
     <>
-     <DataContext.Consumer>
-        {
-            (name) =>{
-                return(
-                    <>
-                    <h1>my name is :{name}</h1>
-                    </>
-                )
-            }
-        }
-     </DataContext.Consumer>
+      <DataContext.Consumer>
+        {(name) => {
+          return (
+            <>
+              <h1>my name is :{name}</h1>
+            </>
+          );
+        }}
+      </DataContext.Consumer>
     </>
-  )
+  );
 }
 
-export default Child1
+export default Child1;

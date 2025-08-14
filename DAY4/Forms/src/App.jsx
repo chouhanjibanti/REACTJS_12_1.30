@@ -1,18 +1,72 @@
-// Topics will cover :- React Form , controlled and uncontrolled 
+// // React controlled component
+// // in this we are using useState
+
+// import React from 'react'
+// import { useState } from 'react'
+// import Child from './Child';
+
+// function App() {
+
+// const[name,setName] = useState("");
+// const[pswd,setPswd] = useState("");
+
+// function handleChange(e){
+//   console.log(e.target.value); 
+// let capName =  e.target.value.toUpperCase();
+// // setName(e.target.value)
+// setName(capName)
+// }
+
+// function handlePassword(e){
+//   console.log(e.target.value);
+//   setPswd(e.target.value)
+// } 
+
+//   return (
+//     <>
+//        <form action="">
+//           <label htmlFor="">FName :</label>
+//           <input type="text" value={name}  onChange={handleChange}/> <br />
+//            <label htmlFor="">Password :</label>
+//           <input type="text" value={pswd}  onChange={handlePassword}/>
+//        </form>
+//        <Child name={name}/>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+
+
 import React from 'react'
+import { useState } from 'react';
 
 function App() {
+
+ const[name,setName] = useState("");
+const[pswd,setPswd] = useState("");
+
+
+function handleChange(e){
+    // console.log(e.target.value);
+    if (e.target.name == 'firstname') {
+     const capName= (e.target.value).toUpperCase();
+     setName(capName)
+    } else {
+      setPswd(e.target.value)
+    }
+}
   return (
-    <>
-    <form action="">
-      <label for="fname">First Name:-</label> <br />
-      <input type="text" />
-       {/* set the name by default name = "john"   */}
-       {/*  we can readonly , we can pass from one to another com, we can not change  */}
-       {/* if i want to store the value  and display the value or access , for this handling we can use the State , using this things react form controlled*/}
-   
-    </form>
-    </>
+  <>
+   <form action="">
+           <label htmlFor="">FName :</label>
+          <input type="text" value={name} name='firstname'  onChange={handleChange}/> <br />
+            <label htmlFor="">Password :</label>
+           <input type="text" value={pswd} name='password' onChange={handleChange}/>
+       </form>
+  </>
   )
 }
 

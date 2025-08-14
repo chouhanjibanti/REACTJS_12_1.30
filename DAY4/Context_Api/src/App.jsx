@@ -1,22 +1,21 @@
 // App.jsx -> provider
-import React, { createContext } from 'react'
-import Child1 from './Child1';
+import React, { createContext } from "react";
+import Child1 from "./Child1";
 
-const DataContext =  createContext();
+const DataContext = createContext();
 function App() {
-
   const name = "tushar1";
   return (
     <>
       <DataContext.Provider value={name}>
-         <Child1/>
+        <Child1/>
       </DataContext.Provider>
     </>
-  )
+  );
 }
 
-export default App
-export {DataContext}
+export default App;
+export { DataContext };
 
 // function declaration
 // create context
